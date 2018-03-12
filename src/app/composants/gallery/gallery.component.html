@@ -1,5 +1,5 @@
 <form>
-  <label>Rechercher :</label>
+  <label>Mot clé :</label>
   <input type="text" name="motCle" [(ngModel)]="motCle" required appAutofocus>
   <button [disabled]="!motCle" type="submit" class="btn btn-secondary" (click)="Rechercher()">Rechercher</button>
   <label *ngIf="photos">{{photos.totalHits}} résultat(s)</label>

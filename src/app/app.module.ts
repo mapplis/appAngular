@@ -11,6 +11,7 @@ import { GalleryComponent } from './composants/gallery/gallery.component';
 import { CommentairesService } from './services/commentaires.service';
 import { GalleryService } from './services/gallery.service';
 import { AutofocusDirective } from './autofocus.directive';
+import { AboutComponent } from './composants/about/about.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AutofocusDirective } from './autofocus.directive';
     CommentairesComponent,
     Composant2Component,
     GalleryComponent,
-    AutofocusDirective
+    AutofocusDirective,
+    AboutComponent
   ],
   imports: [
     BrowserModule, FormsModule, AppRoutingModule, HttpModule, ReactiveFormsModule
