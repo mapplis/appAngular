@@ -1,0 +1,26 @@
+<form>
+  <label>Rechercher :</label>
+  <input type="text" name="motCle" [(ngModel)]="motCle" required appAutofocus>
+  <button [disabled]="!motCle" type="submit" class="btn btn-secondary" (click)="Rechercher()">Rechercher</button>
+  <label *ngIf="photos">{{photos.totalHits}} résultat(s)</label>
+  <div *ngIf="photos && photos.totalHits > 0">
+    <button [disabled]="pageCourante === 1" (click)="Precedentes()">Précédentes</button>
+    {{pageCourante}}
+    <button [disabled]="pageCourante === nbPages" (click)="Suivantes()">Suivantes</button>
+  </div>
+</form>
+
+<div *ngFor="let p of photos?.hits" class="responsive">
+  <div class="gallery">
+    <div class="desc">
+      <a target="_self" [href]="p.userImageURL">
+        <img [src]="p.userImageURL" alt="" class="rounded-circle" width="50" height="50">
+      </a>{{p.tags}}
+    </div>
+    <div class="image">
+      <a target="_self" [href]="p.webformatURL">
+        <img id='imgReelle' [src]="p.previewURL" alt="" class="img-thumbnail">
+      </a>
+    </div>
+  </div>
+</div>

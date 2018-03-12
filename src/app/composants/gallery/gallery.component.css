@@ -1,0 +1,60 @@
+div.gallery {
+    border: 1px solid #ccc;
+    width:200px;
+    height:200px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.image {
+    display: flex;
+    justify-content: center;
+}
+
+div.gallery #imgReelle {
+
+    /* display: block; */
+    max-width:199px;
+    max-height:140px;
+    width: auto;
+    height: auto;
+}
+
+div.desc {
+    padding: 1px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 10px 1px;
+    float: left;
+    width: 20%;
+}
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {       
+         width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}

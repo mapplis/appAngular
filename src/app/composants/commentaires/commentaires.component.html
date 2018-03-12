@@ -1,0 +1,17 @@
+<form #f="ngForm" (ngSubmit)="ajouterCommentaire(f.value)">
+  <div class="form-group">
+    <input required name="message" appAutofocus  type="text" [(ngModel)]="commentaire.message">
+    <button class="btn btn-secondary" type="submit" [disabled]="!f.valid">Ajouter commentaire</button>
+  </div>
+  <div class="form-group">
+    <h3>Commentaires</h3>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let c of commentaires; let i=index">
+        <!-- {{i+1|number : '3.0-0' }}  -->
+        {{c.message}}{{p}}
+        <span id='dateMessage' class="badge badge-secondary">{{c.dateMessage|date:'dd/MM/yyyy HH:mm:ss'}}</span>
+      </li>
+    </ul>
+  </div>
+</form>
+<!-- {{f.value|json}} -->
